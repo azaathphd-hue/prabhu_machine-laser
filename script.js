@@ -58,10 +58,34 @@ function closeLightbox(){
 }
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
 
-// ── CONTACT FORM
-function handleSubmit(){
+// ── CONTACT FORM → WHATSAPP
+function handleSubmit(event){
   const btn = event.target;
-  btn.textContent = '✓ ஆர்டர் அனுப்பப்பட்டது!';
+
+  const name    = document.getElementById('order-name').value.trim();
+  const phone   = document.getElementById('order-phone').value.trim();
+  const email   = document.getElementById('order-email').value.trim();
+  const service = document.getElementById('order-service').value.trim();
+  const message = document.getElementById('order-message').value.trim();
+
+  if(!name || !phone || !service){
+    alert('தயவுசெய்து பெயர், தொலைபேசி மற்றும் சேவை வகை உள்ளிடவும்.');
+    return;
+  }
+
+  const text =
+    '🔔 *புதிய ஆர்டர் - Prabhu Laser*%0A' +
+    '━━━━━━━━━━━━━━━━━━%0A' +
+    '👤 *பெயர்:* ' + name + '%0A' +
+    '📞 *தொலைபேசி:* ' + phone + '%0A' +
+    '✉️ *மின்னஞ்சல்:* ' + (email || 'தரப்படவில்லை') + '%0A' +
+    '⚙️ *சேவை வகை:* ' + service + '%0A' +
+    '📝 *செய்தி:* ' + (message || 'தரப்படவில்லை') + '%0A' +
+    '━━━━━━━━━━━━━━━━━━';
+
+  window.open('https://wa.me/919965988885?text=' + text, '_blank');
+
+  btn.textContent = '✓ WhatsApp திறக்கப்படுகிறது!';
   btn.style.background = 'linear-gradient(135deg,#2ed573,#1a9e4a)';
   setTimeout(()=>{
     btn.textContent = 'ஆர்டர் அனுப்புங்கள்';
