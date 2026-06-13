@@ -449,20 +449,20 @@
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">பெயர் (Name)</label>
-            <input type="text" class="form-input" placeholder="உங்கள் பெயர்">
+            <input id="order-name" type="text" class="form-input" placeholder="உங்கள் பெயர்">
           </div>
           <div class="form-group">
             <label class="form-label">தொலைபேசி (Phone)</label>
-            <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX">
+            <input id="order-phone" type="tel" class="form-input" placeholder="+91 XXXXX XXXXX">
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">மின்னஞ்சல் (Email)</label>
-          <input type="email" class="form-input" placeholder="your@email.com">
+          <input id="order-email" type="email" class="form-input" placeholder="your@email.com">
         </div>
         <div class="form-group">
           <label class="form-label">சேவை வகை (Service Type)</label>
-          <select class="form-select form-input">
+          <select id="order-service" class="form-select form-input">
             <option value="" style="background:#1a1a1a">சேவையை தேர்ந்தெடுக்கவும்</option>
             <option style="background:#1a1a1a">Gold Chain Design Cutting</option>
             <option style="background:#1a1a1a">Ring Design Cutting</option>
@@ -474,9 +474,9 @@
         </div>
         <div class="form-group">
           <label class="form-label">செய்தி (Message)</label>
-          <textarea class="form-textarea" placeholder="உங்கள் ஆர்டர் விவரங்கள் அல்லது கேள்விகளை இங்கே எழுதுங்கள்..."></textarea>
+          <textarea id="order-message" class="form-textarea" placeholder="உங்கள் ஆர்டர் விவரங்கள் அல்லது கேள்விகளை இங்கே எழுதுங்கள்..."></textarea>
         </div>
-        <button class="btn-primary" onclick="handleSubmit()" style="width:100%;text-align:center;">ஆர்டர் அனுப்புங்கள்</button>
+        <button class="btn-primary" onclick="handleSubmit(event)" style="width:100%;text-align:center;">ஆர்டர் அனுப்புங்கள்</button>
       </div>
     </div>
   </div>
